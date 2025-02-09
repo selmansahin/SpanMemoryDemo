@@ -7,10 +7,34 @@ Bu proje, .NET Core uygulamalarında `Span<T>` ve `Memory<T>` kullanımının pe
 
 ## Benchmark Sonuçları
 
-Benchmark sonuçlarına aşağıdaki bağlantılardan ulaşabilirsiniz:
-- [HTML Raporu](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report.html)
-- [CSV Raporu](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report.csv)
-- [GitHub Markdown Raporu](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report-github.md)
+Benchmark testleri, geleneksel yaklaşımlar ile Span-tabanlı yaklaşımların karşılaştırmalı performans sonuçlarını göstermektedir:
+
+```
+BenchmarkDotNet v0.14.0, Windows 11, Intel Core i7-1360P
+.NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
+| İşlem                    | Ortalama Süre | Bellek Kullanımı |
+|-------------------------|---------------|------------------|
+| Geleneksel String       | 36.238 μs     | 111,200 bytes   |
+| Span String             | 24.023 μs     | 79,920 bytes    |
+| Geleneksel Dizi Kopyala | 118.4 ns      | 0 bytes         |
+| Span Dizi Kopyala       | 110.4 ns      | 0 bytes         |
+| Geleneksel Sayı Ayrıştır| 18.465 μs     | 39,944 bytes    |
+| Span Sayı Ayrıştır      | 10.022 μs     | 0 bytes         |
+```
+
+Önemli Gözlemler:
+1. String işlemlerinde Span kullanımı:
+   - %33 daha hızlı çalışma
+   - %28 daha az bellek kullanımı
+
+2. Dizi kopyalama işlemlerinde:
+   - %7 performans artışı
+   - Her iki yöntemde de ek bellek kullanımı yok
+
+3. Sayı ayrıştırma işlemlerinde:
+   - %45 daha hızlı çalışma
+   - Sıfır ek bellek kullanımı
 
 ## Proje Yapısı
 
@@ -88,10 +112,34 @@ This project demonstrates the performance advantages of using `Span<T>` and `Mem
 
 ## Benchmark Results
 
-You can access the benchmark results through the following links:
-- [HTML Report](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report.html)
-- [CSV Report](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report.csv)
-- [GitHub Markdown Report](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report-github.md)
+The benchmark tests show comparative performance results between traditional approaches and Span-based approaches:
+
+```
+BenchmarkDotNet v0.14.0, Windows 11, Intel Core i7-1360P
+.NET 9.0.0 (9.0.24.52809), X64 RyuJIT AVX2
+
+| Operation               | Mean Time     | Memory Allocated |
+|------------------------|---------------|------------------|
+| Traditional String     | 36.238 μs     | 111,200 bytes   |
+| Span String           | 24.023 μs     | 79,920 bytes    |
+| Traditional Array Copy | 118.4 ns      | 0 bytes         |
+| Span Array Copy       | 110.4 ns      | 0 bytes         |
+| Traditional Number Parse| 18.465 μs     | 39,944 bytes    |
+| Span Number Parse     | 10.022 μs     | 0 bytes         |
+```
+
+Key Observations:
+1. String operations with Span:
+   - 33% faster execution
+   - 28% less memory allocation
+
+2. Array copy operations:
+   - 7% performance improvement
+   - No additional memory allocation in both methods
+
+3. Number parsing operations:
+   - 45% faster execution
+   - Zero additional memory allocation
 
 ## Project Structure
 
