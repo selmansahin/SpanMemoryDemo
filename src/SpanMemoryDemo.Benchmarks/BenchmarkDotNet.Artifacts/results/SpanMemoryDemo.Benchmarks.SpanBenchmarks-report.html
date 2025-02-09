@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>SpanMemoryDemo.Benchmarks.SpanBenchmarks-20250209-141049</title>
+<title>SpanMemoryDemo.Benchmarks.SpanBenchmarks-20250209-151307</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -22,14 +22,14 @@ BenchmarkDotNet v0.14.0, Windows 11 (10.0.26100.3037)
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>Method                </th><th>Mean </th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
+<thead><tr><th>Method            </th><th>Mean </th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen0</th><th>Gen1</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>&#39;Traditional String Parsing&#39;</td><td>45,622.7 ns</td><td>2,979.56 ns</td><td>8,500.84 ns</td><td>44,800.38 ns</td><td>11.8103</td><td>-</td><td>111200 B</td>
-</tr><tr><td>&#39;Span-based String Parsing&#39;</td><td>23,332.6 ns</td><td>975.00 ns</td><td>2,717.90 ns</td><td>23,133.08 ns</td><td>8.4839</td><td>-</td><td>79920 B</td>
-</tr><tr><td>&#39;Traditional Array Copy&#39;</td><td>107.9 ns</td><td>5.15 ns</td><td>14.71 ns</td><td>103.34 ns</td><td>-</td><td>-</td><td>-</td>
-</tr><tr><td>&#39;Span-based Array Copy&#39;</td><td>100.9 ns</td><td>4.27 ns</td><td>12.45 ns</td><td>96.94 ns</td><td>-</td><td>-</td><td>-</td>
-</tr><tr><td>&#39;Traditional Number Parsing&#39;</td><td>16,957.1 ns</td><td>822.65 ns</td><td>2,373.55 ns</td><td>16,458.43 ns</td><td>4.2419</td><td>0.5188</td><td>39944 B</td>
-</tr><tr><td>&#39;Span-based Number Parsing&#39;</td><td>9,567.3 ns</td><td>457.83 ns</td><td>1,306.21 ns</td><td>8,982.23 ns</td><td>-</td><td>-</td><td>-</td>
+</thead><tbody><tr><td>TraditionalStringParsing</td><td>36,238.1 ns</td><td>2,089.50 ns</td><td>5,893.48 ns</td><td>35,040.2 ns</td><td>11.8103</td><td>-</td><td>111200 B</td>
+</tr><tr><td>SpanStringParsing</td><td>24,023.2 ns</td><td>1,172.13 ns</td><td>3,286.77 ns</td><td>23,697.5 ns</td><td>8.4839</td><td>-</td><td>79920 B</td>
+</tr><tr><td>TraditionalArrayCopy</td><td>118.4 ns</td><td>8.10 ns</td><td>23.25 ns</td><td>110.4 ns</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>SpanArrayCopy</td><td>110.4 ns</td><td>6.56 ns</td><td>18.40 ns</td><td>105.6 ns</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>TraditionalNumberParsing</td><td>18,465.6 ns</td><td>1,319.76 ns</td><td>3,807.80 ns</td><td>17,275.4 ns</td><td>4.2419</td><td>0.5188</td><td>39944 B</td>
+</tr><tr><td>SpanNumberParsing</td><td>10,022.7 ns</td><td>454.39 ns</td><td>1,266.65 ns</td><td>9,713.6 ns</td><td>-</td><td>-</td><td>-</td>
 </tr></tbody></table>
 </body>
 </html>

@@ -37,7 +37,7 @@ public class SpanBenchmarks
         _numbers = new int[1000];
     }
 
-    [Benchmark(Description = "Traditional String Parsing")]
+    [Benchmark]
     public void TraditionalStringParsing()
     {
         foreach (var name in _names)
@@ -46,7 +46,7 @@ public class SpanBenchmarks
         }
     }
 
-    [Benchmark(Description = "Span-based String Parsing")]
+    [Benchmark]
     public void SpanStringParsing()
     {
         foreach (var name in _names)
@@ -55,19 +55,19 @@ public class SpanBenchmarks
         }
     }
 
-    [Benchmark(Description = "Traditional Array Copy")]
+    [Benchmark]
     public void TraditionalArrayCopy()
     {
         ArrayOperationsExample.CopyArrayTraditional(_sourceArray, _destArray);
     }
 
-    [Benchmark(Description = "Span-based Array Copy")]
+    [Benchmark]
     public void SpanArrayCopy()
     {
         ArrayOperationsExample.CopyArrayWithSpan(_sourceArray, _destArray);
     }
 
-    [Benchmark(Description = "Traditional Number Parsing")]
+    [Benchmark]
     public void TraditionalNumberParsing()
     {
         var parts = _numberString.Split(',');
@@ -77,7 +77,7 @@ public class SpanBenchmarks
         }
     }
 
-    [Benchmark(Description = "Span-based Number Parsing")]
+    [Benchmark]
     public void SpanNumberParsing()
     {
         StringParsingExample.TryParseNumbers(_numberString, _numbers);
