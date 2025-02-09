@@ -5,6 +5,13 @@
 
 Bu proje, .NET Core uygulamalarında `Span<T>` ve `Memory<T>` kullanımının performans avantajlarını göstermektedir. Bu tipler, diziler ve stringlerle çalışırken yüksek performanslı ve düşük bellek ayırma alternatifleri sunar.
 
+## Benchmark Sonuçları
+
+Benchmark sonuçlarına aşağıdaki bağlantılardan ulaşabilirsiniz:
+- [HTML Raporu](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report.html)
+- [CSV Raporu](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report.csv)
+- [GitHub Markdown Raporu](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report-github.md)
+
 ## Proje Yapısı
 
 - **SpanMemoryDemo.Core**: Geleneksel ve Span-tabanlı yaklaşımları gösteren örnek uygulamaları içerir
@@ -78,6 +85,13 @@ Bu proje, .NET Core uygulamalarında `Span<T>` ve `Memory<T>` kullanımının pe
 [EN]
 
 This project demonstrates the performance advantages of using `Span<T>` and `Memory<T>` in .NET Core applications. These types provide high-performance and low-allocation alternatives when working with arrays and strings.
+
+## Benchmark Results
+
+You can access the benchmark results through the following links:
+- [HTML Report](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report.html)
+- [CSV Report](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report.csv)
+- [GitHub Markdown Report](BenchmarkDotNet.Artifacts/results/SpanMemoryDemo.Benchmarks.SpanBenchmarks-report-github.md)
 
 ## Project Structure
 
