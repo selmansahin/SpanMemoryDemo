@@ -27,9 +27,6 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
-## BenchmarkDotNet
-BenchmarkDotNet.Artifacts/
-
 ## Visual Studio Code
 .vscode/
 
